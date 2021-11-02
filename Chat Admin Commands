@@ -1,0 +1,44 @@
+local Prefix = "/"
+
+game.Players.PlayerAdded:Connect(function(player)--- This part will run once a player is added to players class.
+	
+	if player.Name == "Player0" or "Player1" then --Change Player0 or Player1 to the name of the admin 
+		
+        print("Admin joined the game")
+		
+		player.Chatted:Connect(function(msg) --When the admin chatted this part will run
+			
+			if msg == Prefix.."Speed 100" then --Change "Speed 100" to your command name
+				
+				player.Character.Humanoid.WalkSpeed = 100 --Changes Admins Speed to 100
+				
+				print("Admin Speed is 100")
+				
+			end
+			
+			--For more admin commands use the format below
+			
+			--player.Chatted:Connect(function(msg) 
+
+			--	if msg == Prefix.."Speed 100" then -
+
+				---	player.Character.Humanoid.WalkSpeed = 100 
+
+				--	print("Admin Speed is 100")
+
+			--	end
+			
+		end)
+		
+		
+	end
+	
+	
+end)
+
+--Output:
+
+--Admin joined the game
+--Admin Speed is 100
+
+
